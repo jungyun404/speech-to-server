@@ -31,7 +31,7 @@ recorderApp.controller('RecorderController', [ '$scope' , function($scope) {
 			}
 		};
 
-		$scope.ws = new WebSocket("ws://" + window.location.host + "/ws/audio");
+		$scope.ws = new WebSocket("wss://" + window.location.host + "/ws/audio");
 		$scope.ws.onopen = function() {
 			navigator.webkitGetUserMedia({ video: false, audio: true }, $scope.gotUserMedia, $scope.userMediaFailed);
 		};
@@ -84,4 +84,3 @@ recorderApp.controller('RecorderController', [ '$scope' , function($scope) {
 	};
 
 }]);
-
